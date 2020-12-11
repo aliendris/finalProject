@@ -1,0 +1,16 @@
+.chart{
+  padding: 2em 2em 2em 2em;
+  column-count: 3;
+  column-gap: 40px;
+  column-rule-style: solid;
+  column-rule-color: lightblue;
+  column-rule: 1px solid lightblue;
+  column-width: auto;
+
+
+}
+.chart.h1{
+
+  text-align: center
+
+}

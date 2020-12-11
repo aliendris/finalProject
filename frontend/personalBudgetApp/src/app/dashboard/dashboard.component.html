@@ -1,0 +1,35 @@
+<div class="dashboardcontainer">
+  <div class="dashboardformbody">
+      <form style="width:100%;" [formGroup]="dashboardForm">
+          <div class="header">Configure Your Expense </div>
+          <div>
+              <mat-form-field style="width:100%;">
+                  <input type="text" formControlName="title" matInput placeholder="expense type">
+              </mat-form-field>
+
+          </div>
+
+          <div>
+              <mat-form-field style="width:100%;">
+                  <input type="number" formControlName="value" matInput placeholder="amount">
+              </mat-form-field>
+          </div>
+
+          <div>
+          <mat-label>pick color</mat-label>
+          <mat-select  formControlName="color">
+          <mat-option *ngFor="let color of colors" [value]="color.value">
+          {{color.viewValue}}
+          </mat-option>
+          </mat-select>
+        </div>
+
+          <div style="margin-top:30px;">
+              <button class="form-btn" (click)="add()">Add</button>
+          </div>
+      </form>
+  </div>
+
+</div>
+<br>
+<app-chart></app-chart>
