@@ -17,12 +17,12 @@ export class RegisterComponent implements OnInit {
       email: new FormControl(null, Validators.email),
       username: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required),
-      cnfpass: new FormControl(null, this.passValidator)
+      ripassword: new FormControl(null, this.passValidator)
     });
 
     this.myRegForm.controls.password.valueChanges
       .subscribe(
-        x => this.myRegForm.controls.cnfpass.updateValueAndValidity()
+        x => this.myRegForm.controls.ripassword.updateValueAndValidity()
       );
   }
 
@@ -34,21 +34,19 @@ export class RegisterComponent implements OnInit {
 
   passValidator(control: AbstractControl) {
     if (control && (control.value !== null || control.value !== undefined)) {
-      const cnfpassValue = control.value;
+      const ripasswordValue = control.value;
       const passControl = control.root.get('password');
       if (passControl) {
         const passValue = passControl.value;
-        if (passValue !== cnfpassValue || passValue === '') {
+        if (passValue !== ripasswordValue || passValue === '') {
           return {
             isError: true
           };
         }
       }
     }
-
     return null;
   }
-
   register() {
     console.log(this.myRegForm.value);
     if (this.myRegForm.valid) {
@@ -59,8 +57,7 @@ export class RegisterComponent implements OnInit {
         );
     }
   }
-
-  movetologin() {
+  routetologin() {
     this.myRouter.navigate(['../login'], { relativeTo: this.myActivatedRoute });
   }
 }

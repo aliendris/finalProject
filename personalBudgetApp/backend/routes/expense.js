@@ -38,7 +38,7 @@ function verifyToken(req,res,next){
 }
 
 router.get('/expenseData', function(req,res,next){
-  
+
   let promise = Expense.find({});
 
   promise.then(function(data){

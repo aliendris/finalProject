@@ -29,7 +29,7 @@ router.post('/register', (req, res, next) => {
        error:err
      });
    });
-  
+
   });
 });
 
@@ -69,7 +69,7 @@ return bcrypt.compare(req.body.password, user.password);
 //       return res.status(400).json({message:' login to see the Dashboard'});
 //     }
 //     if(tokendata){
-//       decodedToken =tokendata; 
+//       decodedToken =tokendata;
 //       next();
 //     }
 //   })

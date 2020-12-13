@@ -10,10 +10,11 @@ var expenseRouter = require('./routes/expense');
 
 
 var app = express();
-var port = 3000;
-//mongoose 
+// var port = 3000;
+//mongoose
 var mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://alim:alim@cluster0.o21xl.mongodb.net/personalBudgetApp?retryWrites=true&w=majority',{ useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://alim:alim@cluster0.o21xl.mongodb.net/personalBudgetApp?retryWrites=true&w=majority',{ useNewUrlParser: true,
+useUnifiedTopology: true, useFindAndModify: false, useCreateIndex:true});
 // cors
 var cors = require('cors');
 app.use(cors({
@@ -60,11 +61,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(port, () => {
-  console.log(`app listening at http://localhost:${port}`)
-});
+// app.listen(port, () => {
+//   console.log(`app listening at http://localhost:${port}`)
+// });
 
 module.exports = app;
 
-
-//Reference  https://www.youtube.com/watch?v=toRmWFzB6-E&ab_channel=AzharHusain 
