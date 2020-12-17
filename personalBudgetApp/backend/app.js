@@ -18,7 +18,7 @@ useUnifiedTopology: true, useFindAndModify: false, useCreateIndex:true});
 // cors
 var cors = require('cors');
 app.use(cors({
-  origin:'http://localhost:4200'
+  origin:'http://161.35.96'
 }));
 
 // view engine setup
