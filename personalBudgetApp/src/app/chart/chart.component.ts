@@ -21,7 +21,7 @@ export class ChartComponent implements AfterViewInit {
 constructor(private http: HttpClient) { }
 
   ngAfterViewInit(): void {
-    this.http.get('http://localhost:3000/expense/expenseData')
+    this.http.get('http://161.35.96.14/expense/expenseData')
     .subscribe((res: any) => {
       console.log(res);
       for(var i = 0; i < res.length; i++) {
